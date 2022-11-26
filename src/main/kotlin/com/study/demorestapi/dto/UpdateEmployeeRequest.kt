@@ -1,6 +1,7 @@
 package com.study.demorestapi.dto
 
-data class AddPersonRequest (
+data class UpdateEmployeeRequest (
+        val id: Long,
         val name: String,
         val lastName: String?,
         val job: String,

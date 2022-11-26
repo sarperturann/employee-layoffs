@@ -3,7 +3,7 @@ package com.study.demorestapi.domain
 import javax.persistence.*
 
 @Entity
-data class Person(
+data class Employee(
         @Id
         @SequenceGenerator(name = PERSON_SEQUENCE, sequenceName = PERSON_SEQUENCE, initialValue = 1, allocationSize = 1)
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = PERSON_SEQUENCE)
