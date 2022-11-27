@@ -1,10 +1,10 @@
-package com.study.demorestapi.controller
+package com.study.employeelayoffs.controller
 
-import com.study.demorestapi.dto.AddEmployeeRequest
-import com.study.demorestapi.dto.EmployeeResponse
-import com.study.demorestapi.dto.UpdateEmployeeRequest
-import com.study.demorestapi.controller.EmployeeController.Companion.BASE_VERSION_URL
-import com.study.demorestapi.service.EmployeeService
+import com.study.employeelayoffs.dto.AddEmployeeRequest
+import com.study.employeelayoffs.dto.EmployeeResponse
+import com.study.employeelayoffs.dto.UpdateEmployeeRequest
+import com.study.employeelayoffs.controller.EmployeeController.Companion.BASE_VERSION_URL
+import com.study.employeelayoffs.service.EmployeeService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping

@@ -1,4 +1,4 @@
-package com.study.demorestapi.domain
+package com.study.employeelayoffs.domain
 
 import javax.persistence.*
 

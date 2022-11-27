@@ -1,4 +1,4 @@
-package com.study.demorestapi.dto
+package com.study.employeelayoffs.dto
 
 data class UpdateEmployeeRequest (
         val id: Long,

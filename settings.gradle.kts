@@ -1,1 +1,1 @@
-rootProject.name = "demo-rest-api"
+rootProject.name = "employee-layoffs"

@@ -1,8 +1,8 @@
-package com.study.demorestapi.service
+package com.study.employeelayoffs.service
 
-import com.study.demorestapi.dto.AddEmployeeRequest
-import com.study.demorestapi.dto.EmployeeResponse
-import com.study.demorestapi.dto.UpdateEmployeeRequest
+import com.study.employeelayoffs.dto.AddEmployeeRequest
+import com.study.employeelayoffs.dto.EmployeeResponse
+import com.study.employeelayoffs.dto.UpdateEmployeeRequest
 
 interface EmployeeService {
     fun findById (id: Long): EmployeeResponse?

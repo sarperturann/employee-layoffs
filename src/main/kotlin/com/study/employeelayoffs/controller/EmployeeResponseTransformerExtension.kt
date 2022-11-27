@@ -1,8 +1,8 @@
-package com.study.demorestapi.controller
+package com.study.employeelayoffs.controller
 
-import com.study.demorestapi.domain.Employee
-import com.study.demorestapi.dto.AddEmployeeRequest
-import com.study.demorestapi.dto.EmployeeResponse
+import com.study.employeelayoffs.domain.Employee
+import com.study.employeelayoffs.dto.AddEmployeeRequest
+import com.study.employeelayoffs.dto.EmployeeResponse
 
 fun Employee?.toEmployeeResponse(): EmployeeResponse {
     return EmployeeResponse(
