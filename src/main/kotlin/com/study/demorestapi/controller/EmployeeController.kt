@@ -33,8 +33,8 @@ class EmployeeController (
 
     @PostMapping
     fun save(@RequestBody addEmployeeRequest: AddEmployeeRequest): ResponseEntity<EmployeeResponse> {
-        val employeeResponse: EmployeeResponse? = this.employeeService.save(addEmployeeRequest)
-        return ResponseEntity.created(URI.create(BASE_VERSION_URL.plus("/${employeeResponse?.id}")))
+        val employeeResponse: EmployeeResponse = this.employeeService.save(addEmployeeRequest)
+        return ResponseEntity.created(URI.create(BASE_VERSION_URL.plus("/${employeeResponse.id}")))
                 .body(employeeResponse)
     }
 

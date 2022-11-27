@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class DemoRestApiApplication {
 
-	@GetMapping
-	fun hi(): Employee {
-		return Employee(name = "sarper")
-	}
+
 }
 
 fun main(args: Array<String>) {
