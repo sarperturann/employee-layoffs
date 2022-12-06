@@ -1,8 +1,8 @@
-package com.study.employeelayoffs.controller
+package com.study.employeelayoffs.controller.employee
 
 import com.study.employeelayoffs.domain.Employee
-import com.study.employeelayoffs.dto.AddEmployeeRequest
-import com.study.employeelayoffs.dto.EmployeeResponse
+import com.study.employeelayoffs.dto.employee.AddEmployeeRequest
+import com.study.employeelayoffs.dto.employee.EmployeeResponse
 
 fun Employee?.toEmployeeResponse(): EmployeeResponse {
     return EmployeeResponse(

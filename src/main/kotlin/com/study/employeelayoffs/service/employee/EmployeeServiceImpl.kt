@@ -1,12 +1,12 @@
-package com.study.employeelayoffs.service
+package com.study.employeelayoffs.service.employee
 
-import com.study.employeelayoffs.controller.toEmployee
-import com.study.employeelayoffs.controller.toEmployeeResponse
+import com.study.employeelayoffs.controller.employee.toEmployee
+import com.study.employeelayoffs.controller.employee.toEmployeeResponse
 import com.study.employeelayoffs.dao.EmployeeRepository
 import com.study.employeelayoffs.domain.Employee
-import com.study.employeelayoffs.dto.AddEmployeeRequest
-import com.study.employeelayoffs.dto.EmployeeResponse
-import com.study.employeelayoffs.dto.UpdateEmployeeRequest
+import com.study.employeelayoffs.dto.employee.AddEmployeeRequest
+import com.study.employeelayoffs.dto.employee.EmployeeResponse
+import com.study.employeelayoffs.dto.employee.UpdateEmployeeRequest
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 

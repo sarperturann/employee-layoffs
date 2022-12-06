@@ -1,8 +1,8 @@
-package com.study.employeelayoffs.service
+package com.study.employeelayoffs.service.employee
 
-import com.study.employeelayoffs.dto.AddEmployeeRequest
-import com.study.employeelayoffs.dto.EmployeeResponse
-import com.study.employeelayoffs.dto.UpdateEmployeeRequest
+import com.study.employeelayoffs.dto.employee.AddEmployeeRequest
+import com.study.employeelayoffs.dto.employee.EmployeeResponse
+import com.study.employeelayoffs.dto.employee.UpdateEmployeeRequest
 
 interface EmployeeService {
     fun findById (id: Long): EmployeeResponse?

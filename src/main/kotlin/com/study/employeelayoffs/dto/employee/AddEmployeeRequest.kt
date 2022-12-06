@@ -1,4 +1,4 @@
-package com.study.employeelayoffs.dto
+package com.study.employeelayoffs.dto.employee
 
 data class AddEmployeeRequest (
         val name: String,
