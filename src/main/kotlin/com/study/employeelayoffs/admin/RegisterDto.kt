@@ -1,4 +1,4 @@
-package com.study.employeelayoffs.dto.admin
+package com.study.employeelayoffs.admin
 
 class RegisterDto {
     val name = ""

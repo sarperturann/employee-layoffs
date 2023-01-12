@@ -1,4 +1,4 @@
-package com.study.employeelayoffs.domain
+package com.study.employeelayoffs.admin
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder

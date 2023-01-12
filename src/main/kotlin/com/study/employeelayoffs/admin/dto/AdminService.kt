@@ -1,7 +1,7 @@
-package com.study.employeelayoffs.service.admin
+package com.study.employeelayoffs.admin.dto
 
-import com.study.employeelayoffs.dao.AdminRepository
-import com.study.employeelayoffs.domain.Admin
+import com.study.employeelayoffs.admin.AdminRepository
+import com.study.employeelayoffs.admin.Admin
 import org.springframework.stereotype.Service
 
 @Service

@@ -1,6 +1,6 @@
-package com.study.employeelayoffs.dao
+package com.study.employeelayoffs.employee
 
-import com.study.employeelayoffs.domain.Employee
+import com.study.employeelayoffs.employee.Employee
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

@@ -1,4 +1,4 @@
-package com.study.employeelayoffs.dto.employee
+package com.study.employeelayoffs.employee.dto
 
 data class EmployeeResponse (
     val id: Long,

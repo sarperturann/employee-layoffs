@@ -1,11 +1,11 @@
-package com.study.employeelayoffs.controller
+package com.study.employeelayoffs.admin
 
-import com.study.employeelayoffs.controller.AuthController.Companion.BASE_VERSION_URL
-import com.study.employeelayoffs.domain.Admin
-import com.study.employeelayoffs.dto.admin.LoginDto
-import com.study.employeelayoffs.dto.admin.Message
-import com.study.employeelayoffs.dto.admin.RegisterDto
-import com.study.employeelayoffs.service.admin.AdminService
+import com.study.employeelayoffs.admin.AuthController.Companion.BASE_VERSION_URL
+import com.study.employeelayoffs.admin.dto.LoginDto
+import com.study.employeelayoffs.admin.dto.Message
+import com.study.employeelayoffs.admin.dto.AdminService
+import com.study.employeelayoffs.common.exception.NotFoundException
+import com.study.employeelayoffs.common.exception.WrongPasswordException
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.http.ResponseEntity
@@ -26,26 +26,25 @@ class AuthController(
 ) {
 
     @PostMapping("register")
-    fun register(@RequestBody body: RegisterDto): ResponseEntity<Admin> {
+    fun register(@RequestBody body: RegisterDto): Admin {
         val admin = Admin()
         admin.name = body.name
         admin.email = body.email
         admin.password = body.password
 
-        return ResponseEntity.ok(this.adminService.save(admin))
+        return this.adminService.save(admin)
     }
 
     @PostMapping("login")
     fun login(@RequestBody body: LoginDto, response: HttpServletResponse): ResponseEntity<Any> {
         val admin = this.adminService.findByEmail(body.email)
-            ?: return ResponseEntity.badRequest().body(Message("User not found"))
+            ?: throw NotFoundException(String.format("Admin with email %s not found", body.email))
 
         if (!admin.comparePassword(body.password)) {
-            return ResponseEntity.badRequest().body(Message("Invalid password"))
+            throw WrongPasswordException("Wrong password, please try again")
         }
 
         val issuer = admin.id.toString()
-
         val jwt = Jwts.builder()
             .setIssuer(issuer)
             .setExpiration(Date(System.currentTimeMillis() + 60 * 60 * 24 * 1000)) // 1 day
