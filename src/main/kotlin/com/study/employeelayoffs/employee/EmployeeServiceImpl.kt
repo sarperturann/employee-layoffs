@@ -32,6 +32,10 @@ class EmployeeServiceImpl (
             this.lastName = updateEmployeeRequest.lastName
             this.job = updateEmployeeRequest.job
             this.position = updateEmployeeRequest.position
+            this.team = updateEmployeeRequest.team
+            this.startingDate = updateEmployeeRequest.startingDate
+            this.lastUpdateDate = updateEmployeeRequest.lastUpdateDate
+            this.linesOfCodeWritten = updateEmployeeRequest.linesOfCodeWritten
         })
     }
 

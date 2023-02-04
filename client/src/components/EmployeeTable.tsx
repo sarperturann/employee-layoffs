@@ -7,7 +7,6 @@ const EmployeeTable: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log("what")
         const fetchData = async () => {
             setLoading(true);
             try {
@@ -19,7 +18,6 @@ const EmployeeTable: React.FC = () => {
                 setLoading(false);
             }
         };
-        console.log("inside useeffect")
         fetchData();
     }, []);
 
@@ -34,7 +32,10 @@ const EmployeeTable: React.FC = () => {
                     <TableRow>
                         <TableCell>ID</TableCell>
                         <TableCell>Full Name</TableCell>
-                        <TableCell>Position</TableCell>
+                        <TableCell>Job Title</TableCell>
+                        <TableCell>Team</TableCell>
+                        <TableCell>Starting Date</TableCell>
+                        <TableCell>Efficiency</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -45,6 +46,9 @@ const EmployeeTable: React.FC = () => {
                             </TableCell>
                             <TableCell>{employee.fullName}</TableCell>
                             <TableCell>{employee.jobTitle}</TableCell>
+                            <TableCell>{employee.team}</TableCell>
+                            <TableCell>{employee.startingDate}</TableCell>
+                            <TableCell>{employee.efficiency}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
