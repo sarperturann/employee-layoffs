@@ -100,7 +100,7 @@ const EmployeeTable: React.FC = () => {
               <TableBody>
                 {employees.map((employee) => {
                   const isItemSelected = isSelected(employee.fullName);
-
+                  const startingDate = employee.startingDate.substring(0, employee.startingDate.indexOf(" "))
                   return (
                     <TableRow
                       key={employee.fullName}
@@ -134,7 +134,7 @@ const EmployeeTable: React.FC = () => {
                       <TableCell sx={{ color: 'white' }}>{employee.fullName}</TableCell>
                       <TableCell sx={{ color: 'white' }}>{employee.jobTitle}</TableCell>
                       <TableCell sx={{ color: 'white' }}>{employee.team}</TableCell>
-                      <TableCell sx={{ color: 'white' }}>{employee.startingDate}</TableCell>
+                      <TableCell sx={{ color: 'white' }}>{startingDate}</TableCell>
                       <TableCell sx={{ color: 'white' }}>{employee.efficiency}</TableCell>
                     </TableRow>
                   )
