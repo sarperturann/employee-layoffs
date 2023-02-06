@@ -1,7 +1,8 @@
 import { alpha, Box, Container, Tab, Tabs, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import EmployeeTable from './components/EmployeeTable';
+import SignIn from './components/SignIn';
 import TopBar from './components/TopBar';
 
 interface TabPanelProps {
@@ -30,8 +31,18 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
+function getInitialState() {
+  var initialState = localStorage.getItem('isLoggedIn')
 
-function App() {
+  return initialState == "true" ? true : false
+}
+
+interface MainScreenProps {
+  isLoggedIn: boolean,
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+function MainScreen(props: MainScreenProps) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -40,7 +51,7 @@ function App() {
 
   return (
     <div className="App">
-      <TopBar />
+      <TopBar isLoggedIn={props.isLoggedIn} setIsLoggedIn={props.setIsLoggedIn}/>
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs textColor='secondary' TabIndicatorProps={{ style: { background: "#f3f4fa" } }} value={value} onChange={handleChange} aria-label="basic tabs example">
@@ -69,6 +80,18 @@ function App() {
       </Container>
     </div>
   );
+}
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(getInitialState);
+
+  useEffect(()=>{
+    localStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn))
+},[isLoggedIn] )
+
+
+  return isLoggedIn ? <MainScreen isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/> : <SignIn isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>;
+    
 }
 
 export default App;
