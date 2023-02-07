@@ -24,6 +24,12 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("io.jsonwebtoken:jjwt:0.9.1")
+	// https://mvnrepository.com/artifact/com.rabbitmq/amqp-client
+	implementation("com.rabbitmq:amqp-client:5.16.0")
+	// https://mvnrepository.com/artifact/org.springframework.amqp/spring-amqp
+	implementation("org.springframework.amqp:spring-amqp:3.0.1")
+	implementation("org.springframework.amqp:spring-rabbit:3.0.1")
+	implementation("org.slf4j:slf4j-api:1.7.25")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	runtimeOnly("org.postgresql:postgresql")
