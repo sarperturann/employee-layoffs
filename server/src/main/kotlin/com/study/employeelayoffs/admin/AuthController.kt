@@ -4,6 +4,7 @@ import com.study.employeelayoffs.admin.AuthController.Companion.BASE_VERSION_URL
 import com.study.employeelayoffs.admin.dto.LoginDto
 import com.study.employeelayoffs.admin.dto.Message
 import com.study.employeelayoffs.admin.dto.AdminService
+import com.study.employeelayoffs.common.RequiresCookie
 import com.study.employeelayoffs.common.exception.NotFoundException
 import com.study.employeelayoffs.common.exception.WrongPasswordException
 import io.jsonwebtoken.Jwts
@@ -59,6 +60,7 @@ class AuthController(
     }
 
     @GetMapping("admin")
+    @RequiresCookie
     fun admin(@CookieValue("jwt") jwt: String?): ResponseEntity<Any> {
         try {
             if (jwt == null) {
@@ -74,6 +76,7 @@ class AuthController(
     }
 
     @PostMapping("logout")
+    @RequiresCookie
     fun logout(response: HttpServletResponse): ResponseEntity<Any> {
         val cookie = Cookie("jwt", "")
         cookie.maxAge = 0

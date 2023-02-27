@@ -1,5 +1,6 @@
 package com.study.employeelayoffs.employee
 
+import com.study.employeelayoffs.common.RequiresCookie
 import com.study.employeelayoffs.employee.dto.AddEmployeeRequest
 import com.study.employeelayoffs.employee.dto.EmployeeResponse
 import com.study.employeelayoffs.employee.dto.UpdateEmployeeRequest
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
+@RequiresCookie
 @RequestMapping(value = [BASE_VERSION_URL])
 class EmployeeController (
         private val employeeService: EmployeeService,
