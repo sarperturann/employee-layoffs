@@ -5,6 +5,6 @@ RUN gradle build
 
 FROM openjdk:17-jdk-slim
 EXPOSE 8080
-COPY --from=build /home/gradle/src/build/libs/employee-layoffs-0.0.1-SNAPSHOT.jar /app/
-RUN bash -c 'touch /app/employee-layoffs-0.0.1-SNAPSHOT.jar'
-ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseContainerSupport", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/employee-layoffs-0.0.1-SNAPSHOT.jar"]
+COPY --from=build /home/gradle/src/build/libs/server-0.0.1-SNAPSHOT.jar /app/
+RUN bash -c 'touch /app/server-0.0.1-SNAPSHOT.jar'
+ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseContainerSupport", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/server-0.0.1-SNAPSHOT.jar"]
