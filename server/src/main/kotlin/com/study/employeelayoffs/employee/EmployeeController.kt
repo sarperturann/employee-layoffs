@@ -5,7 +5,6 @@ import com.study.employeelayoffs.employee.dto.AddEmployeeRequest
 import com.study.employeelayoffs.employee.dto.EmployeeResponse
 import com.study.employeelayoffs.employee.dto.UpdateEmployeeRequest
 import com.study.employeelayoffs.employee.EmployeeController.Companion.BASE_VERSION_URL
-import com.study.employeelayoffs.rabbitmq.Producer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.DeleteMapping

@@ -1,4 +1,4 @@
-package com.study.employeelayoffs.admin.dto
+package com.study.employeelayoffs.admin
 
 import com.study.employeelayoffs.admin.AdminRepository
 import com.study.employeelayoffs.admin.Admin

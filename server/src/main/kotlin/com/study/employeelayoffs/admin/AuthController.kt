@@ -3,7 +3,6 @@ package com.study.employeelayoffs.admin
 import com.study.employeelayoffs.admin.AuthController.Companion.BASE_VERSION_URL
 import com.study.employeelayoffs.admin.dto.LoginDto
 import com.study.employeelayoffs.admin.dto.Message
-import com.study.employeelayoffs.admin.dto.AdminService
 import com.study.employeelayoffs.common.RequiresCookie
 import com.study.employeelayoffs.common.exception.NotFoundException
 import com.study.employeelayoffs.common.exception.WrongPasswordException
