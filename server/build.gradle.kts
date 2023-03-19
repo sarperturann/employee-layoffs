@@ -6,6 +6,7 @@ plugins {
 	kotlin("jvm") version "1.6.21"
 	kotlin("plugin.spring") version "1.6.21"
 	kotlin("plugin.jpa") version "1.6.21"
+	groovy
 }
 
 group = "com.study"
@@ -18,6 +19,8 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.codehaus.groovy:groovy-all:2.4.21")
+	implementation("org.spockframework:spock-core:2.3-groovy-4.0")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -32,6 +35,8 @@ dependencies {
 	implementation("org.slf4j:slf4j-api:1.7.25")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.codehaus.groovy:groovy-all:2.4.21")
+	testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
 	runtimeOnly("org.postgresql:postgresql")
 }
 
