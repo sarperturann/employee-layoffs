@@ -1,5 +1,6 @@
 package com.study.employeelayoffs.common
 
+import io.jsonwebtoken.Jwts
 import org.springframework.http.HttpStatus
 import org.springframework.web.method.HandlerMethod
 import org.springframework.web.servlet.HandlerInterceptor
@@ -18,6 +19,13 @@ class JwtCookieInterceptor : HandlerInterceptor {
             if (cookie == null) {
                 response.sendError(HttpStatus.UNAUTHORIZED.value(), "Not logged in")
                 response.writer.write("Not logged in")
+                return false
+            }
+            try {
+                Jwts.parser().setSigningKey("secret").parse(cookie.value) // parse and verify the JWT token from the cookie value
+            } catch (e: Exception) {
+                response.sendError(HttpStatus.UNAUTHORIZED.value(), "Invalid JWT")
+                response.writer.write("Invalid JWT")
                 return false
             }
         }
