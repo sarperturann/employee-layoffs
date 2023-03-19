@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping(value = [BASE_VERSION_URL])
 class EmployeeController (
         private val employeeService: EmployeeService,
-        private val rabbitMqProducer: Producer
 ) {
     val LOGGER: Logger = LoggerFactory.getLogger(EmployeeController::class.java)
 
@@ -36,14 +35,17 @@ class EmployeeController (
     fun findAll(): List<EmployeeResponse> = employeeService.findAll()
 
     @PostMapping
-    fun save(@RequestBody addEmployeeRequest: AddEmployeeRequest): EmployeeResponse = employeeService.save(addEmployeeRequest)
+    fun save(@RequestBody addEmployeeRequest: AddEmployeeRequest): EmployeeResponse {
+        return employeeService.save(addEmployeeRequest)
+    }
 
     @PutMapping("/")
-    fun update(@RequestParam id: Long, @RequestBody updateEmployeeRequest: UpdateEmployeeRequest): EmployeeResponse = employeeService.update(id, updateEmployeeRequest)
+    fun update(@RequestParam id: Long, @RequestBody updateEmployeeRequest: UpdateEmployeeRequest): EmployeeResponse {
+        return employeeService.update(id, updateEmployeeRequest)
+    }
 
     @DeleteMapping("/{id}")
     fun deleteById(@PathVariable id: Long) {
-        rabbitMqProducer.sendMessage("test message")
         employeeService.deleteById(id)
     }
 

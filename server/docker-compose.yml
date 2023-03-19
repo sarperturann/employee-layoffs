@@ -30,6 +30,11 @@ services:
 
   rabbitmq:
     image: rabbitmq:3-management
+    container_name: rabbitmq_employee_layoffs
     ports:
       - "5672:5672"
       - "15672:15672"
+    environment:
+      - SPRING_RABBITMQ_HOST= rabbitmq_employee_layoffs
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
