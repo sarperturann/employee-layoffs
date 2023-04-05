@@ -1,5 +1,5 @@
 # Employee Layoffs :dragon:
-Hobby project done by me for my development plan in Blueground.
+Hobby project with stack of Kotlin, Spring, RabbitMQ on the backend with React on the frontend.
 
 The project is currently in the process of getting dockerized and the server-side is dockerized already. In order to run the application:
 
